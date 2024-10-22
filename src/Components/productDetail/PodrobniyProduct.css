@@ -1,0 +1,64 @@
+
+.podrobniy-product-wrapper {
+    max-width: 1124px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+.podrobniy-product {
+    margin: 20px 0;
+}
+
+.titles-container {
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 10px;
+}
+
+.clickable-link {
+    margin: 0 20px; 
+    cursor: pointer; 
+    color: grey; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+    font-size: 22px; 
+}
+
+.clickable-link.active {
+    color: black;
+}
+
+.clickable-link.inactive:hover {
+    color: black;
+}
+
+.description-content {
+    margin-top: 10px;
+}
+
+.description-content p {
+    margin: 50px 0;
+    font-size: 18px; 
+    line-height: 1.5;
+    color: #3a3a3a;
+}
+
+.characteristics-content { 
+    margin: 50px 0;
+}
+
+.characteristics-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.characteristics-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 18px;
+    color: #3a3a3a; 
+}
+.characteristics-table tr:nth-child(even) {
+    background-color: #f5f5f5; 
+}
