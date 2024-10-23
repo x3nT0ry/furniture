@@ -79,14 +79,14 @@ function Logging() {
                             style={{ cursor: "pointer" }} 
                         />
                     </div>
-                    {error && <p className="error">{error}</p>}
+                    {error && <div className="error-message">{error}</div>}
                     <Button type="submit">Увійти</Button>
-                    <p>
+                    <div className="registration-message">
                         Немає аккаунта?{" "}
-                        <span onClick={() => navigate("/registration")}>
+                        <span onClick={() => navigate("/registration")} className="registration-link">
                             Зареєструватися
                         </span>
-                    </p>
+                    </div>
                 </form>
             </div>
         </CenteredContainer>
