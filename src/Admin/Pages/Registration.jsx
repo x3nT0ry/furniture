@@ -42,7 +42,6 @@ function Registration() {
                 },
                 body: JSON.stringify({ login, password }),
             });
-
             const data = await response.json();
             if (data.success) {
                 setRegistrationSuccess(true);
@@ -64,13 +63,13 @@ function Registration() {
                 {registrationSuccess ? (
                     <>
                         <div className="success-message">Реєстрація успішно завершена!</div>
-                        <p className="return-message">Автоматичне повернення до авторизації через 4 секунди...</p>
+                        <div className="return-message">Автоматичне повернення до авторизації через 4 секунди...</div>
                     </>
                 ) : (
                     <>
                         <div className="back-link" onClick={() => navigate("/admin")}>
                             <img src={backArrow} alt="Back" className="back-icon" />
-                            <span className="back-text">Повернутися</span>
+                            <div className="back-text">Повернутися</div>
                         </div>
                         {!isCodeVerified ? (
                             <form onSubmit={handleCodeSubmit}>
@@ -84,7 +83,7 @@ function Registration() {
                                         required
                                     />
                                 </div>
-                                {error && <p className="error">{error}</p>}
+                                {error && <div className="error">{error}</div>}
                                 <Button type="submit" className="submit-button">
                                     Перевірити
                                 </Button>
@@ -120,7 +119,7 @@ function Registration() {
                                         style={{ cursor: 'pointer' }}
                                     />
                                 </div>
-                                {error && <p className="error">{error}</p>}
+                                {error && <div className="error">{error}</div>}
                                 <Button type="submit" className="submit-button">
                                     Зареєструватися
                                 </Button>

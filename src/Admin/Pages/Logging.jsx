@@ -4,8 +4,8 @@ import { useAuth } from "../Components/auth/AuthContext";
 import Button from "../../Components/button/Button";
 import CenteredContainer from "../Components/Contain/Container";
 import "./Logging.css";
-import loginIcon from '../../Images/login.png';
-import passwordIcon from '../../Images/password.png';
+import loginIcon from "../../Images/login.png";
+import passwordIcon from "../../Images/password.png";
 
 function Logging() {
     const [login, setLogin] = useState("");
@@ -60,7 +60,11 @@ function Logging() {
                             placeholder="Логін"
                             required
                         />
-                        <img src={loginIcon} alt="Login Icon" className="input-icon" />
+                        <img
+                            src={loginIcon}
+                            alt="Login Icon"
+                            className="input-icon"
+                        />
                     </div>
                     <div className="input-group">
                         <input
@@ -71,21 +75,24 @@ function Logging() {
                             placeholder="Пароль"
                             required
                         />
-                        <img 
-                            src={passwordIcon} 
-                            alt="Password Icon" 
-                            className="input-icon" 
-                            onClick={togglePasswordVisibility} 
-                            style={{ cursor: "pointer" }} 
+                        <img
+                            src={passwordIcon}
+                            alt="Password Icon"
+                            className="input-icon"
+                            onClick={togglePasswordVisibility}
+                            style={{ cursor: "pointer" }}
                         />
                     </div>
                     {error && <div className="error-message">{error}</div>}
                     <Button type="submit">Увійти</Button>
                     <div className="registration-message">
-                        Немає аккаунта?{" "}
-                        <span onClick={() => navigate("/registration")} className="registration-link">
+                        Немає аккаунта?
+                        <div
+                            onClick={() => navigate("/registration")}
+                            className="registration-link"
+                        >
                             Зареєструватися
-                        </span>
+                        </div>
                     </div>
                 </form>
             </div>

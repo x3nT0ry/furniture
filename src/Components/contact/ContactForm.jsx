@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import "./ContactForm.css";
 import Button from "../button/Button";
 
@@ -29,6 +29,7 @@ export default function ContactForm() {
 
     return (
         <div className="form-wrapper">
+            <div className="contact-form-title">Contact</div> 
             <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-column">
                     <div className="form-label">
@@ -111,7 +112,7 @@ export default function ContactForm() {
                             onChange={handleChange}
                         />
                     </div>
-                    <div >
+                    <div>
                         <Button type="submit">Відправити запит</Button>
                     </div>
                 </div>
