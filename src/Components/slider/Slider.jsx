@@ -4,33 +4,25 @@ import leftArrow from "../../Images/arrow-left.png";
 import rightArrow from "../../Images/arrow-right.png";
 import texts from "./data";
 
-export default function Slider(){
-    const [images] = useState([
-        require("../../Images/slider1.jpg"),
-        require("../../Images/slider2.jpg"),
-        require("../../Images/slider3.jpg"),
-        require("../../Images/slider4.jpg"),
-        require("../../Images/slider5.jpg"),
-    ]);
-
+export default function Slider() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const sliderInterval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         }, 13000);
 
         return () => clearInterval(sliderInterval);
-    }, [images.length]);
+    }, []);
 
     const goToPrevious = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? images.length - 1 : prevIndex - 1
+            prevIndex === 0 ? texts.length - 1 : prevIndex - 1
         );
     };
 
     const goToNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
     };
 
     return (
@@ -42,10 +34,10 @@ export default function Slider(){
                     className="arrow left-arrow"
                     onClick={goToPrevious}
                 />
-                {images.map((image, index) => (
+                {texts.map((text, index) => (
                     <img
                         key={index}
-                        src={image}
+                        src={text.image}
                         alt={`Slide ${index + 1}`}
                         className={`slide ${index === currentIndex ? "active" : ""}`}
                     />
@@ -59,14 +51,11 @@ export default function Slider(){
             </div>
             <div className="text-overlay">
                 <div className="text-background" />
-                
-         
-                    <h1>{texts[currentIndex].title}</h1>
-                
+                <h1>{texts[currentIndex].title}</h1>
                 <div className="text">{texts[currentIndex].description}</div>
             </div>
             <div className="dots-container">
-                {images.map((_, index) => (
+                {texts.map((_, index) => (
                     <div
                         key={index}
                         className={`dot ${index === currentIndex ? "active" : ""}`}
@@ -76,6 +65,4 @@ export default function Slider(){
             </div>
         </div>
     );
-};
-
-
+}
