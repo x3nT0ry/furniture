@@ -1,4 +1,3 @@
-// Button-del.js
 import React from "react";
 
 const ButtonDel = ({ selectedRequestId, onDelete }) => {
@@ -13,7 +12,7 @@ const ButtonDel = ({ selectedRequestId, onDelete }) => {
                     throw new Error('Failed to delete request');
                 }
 
-                onDelete(selectedRequestId); // Call the parent handler to update state
+                onDelete(selectedRequestId);
             } catch (error) {
                 console.error("Error deleting request:", error);
             }

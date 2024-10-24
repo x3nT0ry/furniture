@@ -1,6 +1,6 @@
 import React from "react";
-import AdminImg from "../../../Images/admin.png"; // замініть шлях на ваш реальний шлях до зображення
-import "./Panel.css"; // додайте стилі, якщо потрібно
+import AdminImg from "../../../Images/admin.png"; 
+import "./Panel.css";
 
 const Panel = () => {
     return (

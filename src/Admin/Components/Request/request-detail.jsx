@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // import useNavigate
-import Admins from "../Admin-header/admin-header"; // імпорт компонента Admins
-import Navigation from "../Navigation/navigation"; // імпорт компонента Navigation
+import { useParams, useNavigate } from "react-router-dom"; 
+import Admins from "../Admin-header/admin-header"; 
+import Navigation from "../Navigation/navigation";
 import "./request-detail.css";
 import backArrow from "../../../Images/left-arrow.png";
 
 export default function RequestDetail() {
-    const { id_request } = useParams(); // отримати id_request з URL
-    const navigate = useNavigate(); // useNavigate hook for navigation
+    const { id_request } = useParams(); 
+    const navigate = useNavigate();
     const [requestDetail, setRequestDetail] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -41,9 +41,8 @@ export default function RequestDetail() {
     return (
         <div className="admin-container1">
             {" "}
-            {/* перший клас */}
-            <Admins /> {/* компонент Admins */}
-            <Navigation className="navigation1" /> {/* другий клас */}
+            <Admins /> 
+            <Navigation className="navigation1" />
             <div className="request-detail-content">
                 <div
                     className="back-link2"

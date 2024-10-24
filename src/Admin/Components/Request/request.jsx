@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ButtonDel from "./Button-del"; // Import the ButtonDel component
+import ButtonDel from "./Button-del";
 import "./Request.css";
 
 export default function Request() {
@@ -33,11 +33,10 @@ export default function Request() {
     }, []);
 
     const handleDeleteRequest = (deletedId) => {
-        // Update the requests state to remove the deleted request
         setRequests((prevRequests) =>
             prevRequests.filter((request) => request.id_request !== deletedId)
         );
-        setSelectedRequestId(null); // Clear selected request after deletion
+        setSelectedRequestId(null);
     };
 
     const handleRowClick = (id) => {
@@ -87,9 +86,14 @@ export default function Request() {
                                                 type="radio"
                                                 name="action"
                                                 value={request.id_request}
-                                                checked={selectedRequestId === request.id_request}
+                                                checked={
+                                                    selectedRequestId ===
+                                                    request.id_request
+                                                }
                                                 onChange={() =>
-                                                    setSelectedRequestId(request.id_request)
+                                                    setSelectedRequestId(
+                                                        request.id_request
+                                                    )
                                                 }
                                             />
                                         </td>
@@ -97,17 +101,23 @@ export default function Request() {
                                         <td>{request.email}</td>
                                         <td>{request.country}</td>
                                         <td>
-                                            {parseInt(request.tracking_code) === 0
+                                            {parseInt(request.tracking_code) ===
+                                            0
                                                 ? "Відсутній"
                                                 : request.tracking_code}
                                         </td>
                                         <td>
                                             {request.question.length > 100
-                                                ? `${request.question.substring(0, 50)}...`
+                                                ? `${request.question.substring(
+                                                      0,
+                                                      50
+                                                  )}...`
                                                 : request.question}
                                         </td>
                                         <td>
-                                            {new Date(request.datetime).toLocaleString()}
+                                            {new Date(
+                                                request.datetime
+                                            ).toLocaleString()}
                                         </td>
                                         <td>
                                             <button

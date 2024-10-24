@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import "./navigation.css";
 import productImage from "../../../Images/logo_product.png";
 import productImageHover from "../../../Images/logo_product_hover.png";
@@ -12,23 +12,22 @@ import sliderImageHover from "../../../Images/logo_slider_hover.png";
 
 export default function Navigation() {
     const [activeItem, setActiveItem] = useState(null);
-    const navigate = useNavigate(); // Initialize navigate
+    const navigate = useNavigate(); 
 
     const handleClick = (index) => {
         setActiveItem(index);
-        // Navigate to the corresponding route based on the index
         switch (index) {
             case 0:
-                navigate("/admin-panel/product"); // Redirect to Product
+                navigate("/admin-panel/product"); 
                 break;
             case 1:
-                navigate("/admin-panel/order"); // Redirect to Order
+                navigate("/admin-panel/order"); 
                 break;
             case 2:
-                navigate("/admin-panel/request"); // Redirect to Request
+                navigate("/admin-panel/request"); 
                 break;
             case 3:
-                navigate("/admin-panel/slide"); // Redirect to Slide
+                navigate("/admin-panel/slide"); 
                 break;
             default:
                 break;

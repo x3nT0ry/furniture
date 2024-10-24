@@ -95,7 +95,7 @@ function Registration() {
                                         }
                                         placeholder="Введіть код довіреної особи"
                                         required
-                                        style={{ margin: "25px 0" }} // Inline style for margin top
+                                        style={{ margin: "25px 0" }}
                                     />
                                 </div>
                                 {error && <div className="error">{error}</div>}

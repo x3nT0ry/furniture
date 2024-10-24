@@ -9,7 +9,7 @@
     cursor: pointer;
     background-color: black;
     color: white;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Добавлено для плавного изменения цвета текста */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .button-container::before {

@@ -69,10 +69,10 @@
 
 input {
     width: 100%;
-    padding: 15px; /* Increased padding */
+    padding: 15px;
     margin-top: 5px;
     box-sizing: border-box;
-    border-radius: 25px; /* Increased border radius */
+    border-radius: 25px; 
     border: 1px solid #ccc;
     transition: border-color 0.2s ease;
 }
@@ -85,14 +85,14 @@ input:focus {
 .error-message,
 .success-message,
 .return-message {
-    color: #c10015; /* Use the same color for errors and messages */
+    color: #c10015;
     margin-bottom: 20px;
 }
 
 .registration-message {
-    display: flex;                     /* Use flexbox to align items in a row */
-    align-items: center;              /* Center items vertically */
-    color: #333;                      /* Text color */
+    display: flex;                    
+    align-items: center;              
+    color: #333;                    
     font-size: 16px;                 
     margin-top: 20px;                
 }

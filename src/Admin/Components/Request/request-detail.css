@@ -16,7 +16,7 @@
     line-height: 1.5;
 }
 .request-detail-question {
-    white-space: pre-wrap; /* Відображає нові рядки */
+    white-space: pre-wrap; 
 }
 
 .request-detail:last-child {

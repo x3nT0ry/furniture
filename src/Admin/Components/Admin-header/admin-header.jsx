@@ -18,7 +18,6 @@ export default function Admins() {
         navigate("/admin");
     };
 
-    // Handler for the title click
     const handleTitleClick = () => {
         navigate("/admin-panel");
     };
