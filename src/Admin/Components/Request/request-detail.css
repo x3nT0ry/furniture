@@ -1,0 +1,55 @@
+
+.request-detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 182px;
+}
+
+.request-detail {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.request-detail-question {
+    white-space: pre-wrap; /* Відображає нові рядки */
+}
+
+.request-detail:last-child {
+    margin-bottom: 0;
+}
+
+.request-detail-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.request-detail-content div {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.request-detail-content div:last-child {
+    border-bottom: none;
+}
+.back-link2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns content to the left */
+    cursor: pointer;
+    margin-bottom: 20px; /* Add some space below the link */
+}
+
+.back-icon2 {
+    width: 24px; /* Adjust size if needed */
+    margin-right: 10px; /* Add space between the arrow and text */
+}
+
+.back-text2 {
+    font-size: 16px;
+    color: #333;
+}

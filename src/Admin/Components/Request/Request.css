@@ -1,0 +1,102 @@
+.button-group {
+    display: flex;
+    justify-content: flex-end; /* Вирівнює кнопки вправо */
+   
+}
+.table-container {
+    max-height: 400px; /* Висота обмежена, за бажанням можна змінити */
+    overflow-y: auto;  /* Вертикальний скролінг */
+    position: relative;
+}
+.request-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #727070;
+}
+.request-table thead {
+    position: sticky; /* Фіксація заголовка */
+    top: 0; /* Прикріплюємо до верхньої частини контейнера */
+    background-color: #fff; /* Фон для заголовків, щоб текст залишався читабельним */
+    z-index: 1; /* Забезпечує видимість заголовка над рядками */
+    
+}
+.request-table th{
+
+    padding: 12px; /* Збільшено padding для кращого вигляду */
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.request-table td {
+    border: 1px solid #ffffff;
+    padding: 12px; /* Збільшено padding для кращого вигляду */
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.request-table th {
+    background: linear-gradient(to right, #f2f2f2, #e0e0e0); /* Градієнт для заголовка */
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Тінь для заголовка */
+}
+
+.details-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для кнопок */
+    transition: background-color 0.3s, transform 0.2s; /* Анімація для фону і трансформації */
+}
+
+.details-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Піднімання кнопки при наведенні */
+}
+
+.status-legend {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.request-wrapper {
+    margin-left: 40px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+
+
+
+.button-group button {  
+    color: white; /* Text color */
+    background-color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 0 25px 15px; /* Вирівнюємо з правого боку */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    border-radius: 5px;
+}
+
+
+.button-group button:hover {
+    opacity: 0.8; /* Slightly fade on hover */
+    transform: translateY(-2px); /* Піднімання кнопки при наведенні */
+}

@@ -14,7 +14,12 @@
     flex-wrap: wrap;
     padding-bottom: 100px;
 }
-
+.thank-you-message{
+    text-align: center;
+    font-size: 35px;
+    color: #4CAF50; /* Зелений колір для тексту подяки */
+    margin: 198px 0;
+}
 .form-column {
     flex: 1;
     margin-right: 20px;
@@ -48,6 +53,8 @@
 .form-wrapper textarea {
     height: 100px;
     resize: vertical;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5;
 }
 .contact-form-title {
     text-align: center;
@@ -55,4 +62,26 @@
     color: #000000;
     margin: 50px 0;
     font-family: "Old English";
+}
+
+.back-icon1{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.back-link1{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-text1 {
+    color: #333;
+}
+
+.back-text1:hover {
+    color: #c10015;
+    transition: color 0.2s ease;
 }

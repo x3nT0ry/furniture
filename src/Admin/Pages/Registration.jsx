@@ -4,8 +4,8 @@ import CenteredContainer from "../Components/Contain/Container";
 import "./Logging.css";
 import Button from "../../Components/button/Button";
 import backArrow from "../../Images/left-arrow.png";
-import passwordIcon from '../../Images/password.png';
-import loginIcon from '../../Images/login.png';
+import passwordIcon from "../../Images/password.png";
+import loginIcon from "../../Images/login.png";
 
 function Registration() {
     const [trustedCode, setTrustedCode] = useState("");
@@ -62,13 +62,25 @@ function Registration() {
             <div className="registration-container">
                 {registrationSuccess ? (
                     <>
-                        <div className="success-message">Реєстрація успішно завершена!</div>
-                        <div className="return-message">Автоматичне повернення до авторизації через 4 секунди...</div>
+                        <div className="success-message">
+                            Реєстрація успішно завершена!
+                        </div>
+                        <div className="return-message">
+                            Автоматичне повернення до авторизації через 4
+                            секунди...
+                        </div>
                     </>
                 ) : (
                     <>
-                        <div className="back-link" onClick={() => navigate("/admin")}>
-                            <img src={backArrow} alt="Back" className="back-icon" />
+                        <div
+                            className="back-link"
+                            onClick={() => navigate("/admin")}
+                        >
+                            <img
+                                src={backArrow}
+                                alt="Back"
+                                className="back-icon"
+                            />
                             <div className="back-text">Повернутися</div>
                         </div>
                         {!isCodeVerified ? (
@@ -78,9 +90,12 @@ function Registration() {
                                     <input
                                         type="text"
                                         value={trustedCode}
-                                        onChange={(e) => setTrustedCode(e.target.value)}
+                                        onChange={(e) =>
+                                            setTrustedCode(e.target.value)
+                                        }
                                         placeholder="Введіть код довіреної особи"
                                         required
+                                        style={{ margin: "25px 0" }} // Inline style for margin top
                                     />
                                 </div>
                                 {error && <div className="error">{error}</div>}
@@ -96,18 +111,28 @@ function Registration() {
                                         type="text"
                                         id="login"
                                         value={login}
-                                        onChange={(e) => setLogin(e.target.value)}
+                                        onChange={(e) =>
+                                            setLogin(e.target.value)
+                                        }
                                         placeholder="Логін"
                                         required
                                     />
-                                    <img src={loginIcon} alt="Login Icon" className="input-icon" />
+                                    <img
+                                        src={loginIcon}
+                                        alt="Login Icon"
+                                        className="input-icon"
+                                    />
                                 </div>
                                 <div className="input-group">
                                     <input
-                                        type={showPassword ? "text" : "password"}
+                                        type={
+                                            showPassword ? "text" : "password"
+                                        }
                                         id="password"
                                         value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
+                                        onChange={(e) =>
+                                            setPassword(e.target.value)
+                                        }
                                         placeholder="Пароль"
                                         required
                                     />
@@ -115,8 +140,10 @@ function Registration() {
                                         src={passwordIcon}
                                         alt="Toggle Password Visibility"
                                         className="input-icon"
-                                        onClick={() => setShowPassword(!showPassword)}
-                                        style={{ cursor: 'pointer' }}
+                                        onClick={() =>
+                                            setShowPassword(!showPassword)
+                                        }
+                                        style={{ cursor: "pointer" }}
                                     />
                                 </div>
                                 {error && <div className="error">{error}</div>}
