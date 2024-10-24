@@ -40,17 +40,17 @@ export default function RequestDetail() {
 
     return (
         <div className="admin-container1">
-            {" "}
             <Admins /> 
             <Navigation className="navigation1" />
+            
             <div className="request-detail-content">
-                <div
+                <p
                     className="back-link2"
                     onClick={() => navigate("/admin-panel/request")}
                 >
                     <img src={backArrow} alt="Back" className="back-icon2" />
                     <div className="back-text2">Повернутися до звернень</div>
-                </div>
+                </p>
 
                 <div className="request-detail">
                     <span className="request-detail-title">Ім'я:</span>{" "}
@@ -88,10 +88,10 @@ export default function RequestDetail() {
                 </div>
 
                 <div className="request-detail">
-                    <span className="request-detail-title">
-                        Трекінговий код:
-                    </span>{" "}
-                    {requestDetail.tracking_code}
+                    <span className="request-detail-title">Трекінговий код:</span>{" "}
+                    {parseInt(requestDetail.tracking_code) === 0
+                        ? "Відсутній"
+                        : requestDetail.tracking_code}
                 </div>
                 <div className="request-detail">
                     <span className="request-detail-title">Дата і час:</span>{" "}

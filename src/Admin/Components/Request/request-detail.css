@@ -7,7 +7,7 @@
     padding: 20px;
     border-radius: 8px;
     width: 100%;
-    margin-top: 182px;
+
 }
 
 .request-detail {
@@ -30,7 +30,7 @@
 
 .request-detail-content div {
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
 }
 
 .request-detail-content div:last-child {
@@ -39,17 +39,22 @@
 .back-link2 {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligns content to the left */
+    justify-content: flex-start; 
     cursor: pointer;
-    margin-bottom: 20px; /* Add some space below the link */
+    margin-bottom: 20px; 
 }
 
 .back-icon2 {
-    width: 24px; /* Adjust size if needed */
-    margin-right: 10px; /* Add space between the arrow and text */
+    width: 20px;
+    height: 20px; 
+    margin-right: 10px; 
 }
 
 .back-text2 {
     font-size: 16px;
     color: #333;
+}
+.back-text2:hover {
+   
+    color: #c10015;
 }
