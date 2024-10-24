@@ -17,7 +17,7 @@
     width: 100%;
     max-width: 350px;
     height: 100%;
-    max-height: 350px;
+    max-height: 370px;
     padding: 0 30px 30px 30px;
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -83,12 +83,15 @@ input:focus {
 
 .error,
 .error-message,
-.success-message,
-.return-message {
+.return-message{
     color: #c10015;
     margin-bottom: 20px;
 }
-
+.success-message {
+    color: green;
+    font-size: 28px;
+    margin: 120px 0 20px 0;
+}
 .registration-message {
     display: flex;                    
     align-items: center;              
@@ -108,11 +111,7 @@ input:focus {
     transition: color 0.2s ease;    
 }
 
-.success-message {
-    color: green;
-    font-size: 28px;
-    margin: 30px 0;
-}
+
 
 .return-message {
     color: green;
