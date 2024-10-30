@@ -3,6 +3,7 @@
     justify-content: flex-end;
 }
 .table-container {
+    max-width: 1600px;
     max-height: 400px;
     overflow-y: auto;
     position: relative;

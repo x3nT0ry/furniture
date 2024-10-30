@@ -1,28 +1,40 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import "./Slider.css";
 import leftArrow from "../../Images/arrow-left.png";
 import rightArrow from "../../Images/arrow-right.png";
-import texts from "./data";
 
 export default function Slider() {
+    const [slides, setSlides] = useState([]); 
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const sliderInterval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        }, 13000);
-
-        return () => clearInterval(sliderInterval);
+        const fetchSlides = async () => {
+            try {
+                const response = await fetch("http://localhost:3001/api/slides");
+                const data = await response.json();
+                setSlides(data); 
+            } catch (error) {
+                console.error("Помилка завантаження слайдів:", error);
+            }
+        };
+        fetchSlides();
     }, []);
+
+    useEffect(() => {
+        const sliderInterval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        }, 13000);
+        return () => clearInterval(sliderInterval);
+    }, [slides.length]);
 
     const goToPrevious = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? texts.length - 1 : prevIndex - 1
+            prevIndex === 0 ? slides.length - 1 : prevIndex - 1
         );
     };
 
     const goToNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     };
 
     return (
@@ -34,10 +46,10 @@ export default function Slider() {
                     className="arrow left-arrow"
                     onClick={goToPrevious}
                 />
-                {texts.map((text, index) => (
+                {slides.map((slide, index) => (
                     <img
-                        key={index}
-                        src={text.image}
+                        key={slide.id_slider}
+                        src={`http://localhost:3001/images/slider/${slide.image}`}
                         alt={`Slide ${index + 1}`}
                         className={`slide ${index === currentIndex ? "active" : ""}`}
                     />
@@ -51,11 +63,15 @@ export default function Slider() {
             </div>
             <div className="text-overlay">
                 <div className="text-background" />
-                <h1>{texts[currentIndex].title}</h1>
-                <div className="text">{texts[currentIndex].description}</div>
+                {slides.length > 0 && (
+                    <>
+                        <h1>{slides[currentIndex].title}</h1>
+                        <div className="text">{slides[currentIndex].description}</div>
+                    </>
+                )}
             </div>
             <div className="dots-container">
-                {texts.map((_, index) => (
+                {slides.map((_, index) => (
                     <div
                         key={index}
                         className={`dot ${index === currentIndex ? "active" : ""}`}

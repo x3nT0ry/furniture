@@ -10,11 +10,11 @@ import ProductDetail from "./Pages/ProductDetail";
 import Logging from "./Admin/Pages/Logging"; 
 import Registration from "./Admin/Pages/Registration"; 
 import Admin from "./Admin/Pages/Admin-panel"; 
-import Request from "./Admin/Pages/Request"; // Import Request component
-import Order from "./Admin/Pages/Order"; // Import Order component
-import Product from "./Admin/Pages/Product"; // Import Product component
-import Slide from "./Admin/Pages/Slide"; // Import Slide component
-import RequestDetail from "./Admin/Components/Request/request-detail"; // Import RequestDetail component
+import Request from "./Admin/Pages/Request"; 
+import Order from "./Admin/Pages/Order"; 
+import Product from "./Admin/Pages/Product"; 
+import Slide from "./Admin/Pages/Slide";
+import RequestDetail from "./Admin/Components/Request/request-detail";
 import { useAuth } from './Admin/Components/auth/AuthContext'; 
 
 export default function App() {
@@ -38,9 +38,6 @@ export default function App() {
                 <Route path="/admin-panel/product" element={isAuthenticated ? <Product /> : <Navigate to="/admin" />} />
                 <Route path="/admin-panel/slide" element={isAuthenticated ? <Slide /> : <Navigate to="/admin" />} />
                 <Route path="/admin-panel/request/:id_request" element={isAuthenticated ? <RequestDetail /> : <Navigate to="/admin" />} />
-
-
-
             </Routes>
         </Router>
     );

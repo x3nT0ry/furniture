@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom"; 
 import "./navigation.css";
 import productImage from "../../../Images/logo_product.png";
 import productImageHover from "../../../Images/logo_product_hover.png";
@@ -11,27 +11,33 @@ import sliderImage from "../../../Images/logo_slider.png";
 import sliderImageHover from "../../../Images/logo_slider_hover.png";
 
 export default function Navigation() {
-    const [activeItem, setActiveItem] = useState(null);
     const navigate = useNavigate(); 
+    const location = useLocation(); 
+    const [activeItem, setActiveItem] = useState(null);
 
-    const handleClick = (index) => {
-        setActiveItem(index);
-        switch (index) {
-            case 0:
-                navigate("/admin-panel/product"); 
+    useEffect(() => {
+        switch (location.pathname) {
+            case "/admin-panel/product":
+                setActiveItem(0);
                 break;
-            case 1:
-                navigate("/admin-panel/order"); 
+            case "/admin-panel/order":
+                setActiveItem(1);
                 break;
-            case 2:
-                navigate("/admin-panel/request"); 
+            case "/admin-panel/request":
+                setActiveItem(2);
                 break;
-            case 3:
-                navigate("/admin-panel/slide"); 
+            case "/admin-panel/slide":
+                setActiveItem(3);
                 break;
             default:
+                setActiveItem(null);
                 break;
         }
+    }, [location.pathname]);
+
+    const handleClick = (index, path) => {
+        setActiveItem(index);
+        navigate(path);
     };
 
     const getImage = (index) => {
@@ -51,16 +57,21 @@ export default function Navigation() {
 
     return (
         <div className="nav-container">
-            <div className="empty-space1"></div>{" "}
-            <div className="empty-space"></div>{" "}
-            {["Товари", "Замовлення", "Звернення", "Слайдер"].map(
-                (text, index) => (
+            <div className="empty-space1"></div>
+            <div className="empty-space"></div>
+            {["Товари", "Замовлення", "Звернення", "Слайдер"].map((text, index) => {
+                const path = [
+                    "/admin-panel/product",
+                    "/admin-panel/order",
+                    "/admin-panel/request",
+                    "/admin-panel/slide"
+                ][index];
+                
+                return (
                     <div
                         key={index}
-                        className={`nav-item ${
-                            activeItem === index ? "active" : ""
-                        }`}
-                        onClick={() => handleClick(index)}
+                        className={`nav-item ${activeItem === index ? "active" : ""}`}
+                        onClick={() => handleClick(index, path)}
                     >
                         <img
                             src={getImage(index)}
@@ -69,9 +80,9 @@ export default function Navigation() {
                         />
                         <span className="nav-text">{text}</span>
                     </div>
-                )
-            )}
-            <div className="empty-space"></div>{" "}
+                );
+            })}
+            <div className="empty-space"></div>
         </div>
     );
 }
